@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Đăng kí tài khoản</div>
+        <div class="card-body">
+            <div>
+                {{#if errors}}
+                <div class="alert alert-danger">
+                    {{errors}}
+                </div>
+                {{/if}}
+            </div>
+            <form method="POST" action="/signup">
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="text" name="fullname" id="fullname" class="form-control"
+                                    placeholder="Họ và tên" required="required" autofocus="autofocus">
+                                <label for="fullname">Họ và tên</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="text" name="address" id="address" class="form-control"
+                                    placeholder="Địa chỉ" required="required" autofocus="autofocus">
+                                <label for="address">Địa chỉ</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="text" name="mobilephone" id="mobilephone" class="form-control"
+                                    placeholder="Số điện thoại" required="required" autofocus="autofocus">
+                                <label for="mobilephone">Số điện thoại</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="text" name="username" id="username" class="form-control"
+                                    placeholder="User name" required="required" autofocus="autofocus">
+                                <label for="username">User name</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="password" name="password" id="password" class="form-control"
+                                    placeholder="Password" required="required" autofocus="autofocus">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="password" name="confirm_password" id="confirm_password"
+                                    class="form-control" placeholder="Xác nhận password" required="required"
+                                    autofocus="autofocus">
+                                <label for="confirm_password">Xác nhận password</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa fa-plus"></i> Đăng kí ngay
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
