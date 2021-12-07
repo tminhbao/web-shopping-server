@@ -1,0 +1,87 @@
+<div class="dropdown" style="float: right;">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Hello {{user.fullname}}
+    </button>
+    {{#if user}}
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="/account">My Account</a></li>
+        <li><a class="dropdown-item" href="/accountlist">List Admin Account</a></li>
+        <form method="post" action="/logout">
+            <div style="text-align:center">
+                <button class="btn btn-primary" type="submit">Log out</button>
+            </div>
+        </form>
+    </ul>
+    {{/if}}
+</div>
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Trang chủ</a>
+        </li>
+    </ol>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th style="width: 160px;">Mã sản phẩm</th>
+                            <th>Hãng</th>
+                            <th style="width: 140px;">Thương hiệu</th>
+                            <th style="width: 140px;">Tên sản phẩm</th>
+                            <th>CPU</th>
+                            <th>Ram</th>
+                            <th>VGA</th>
+                            <th style="width: 100px;">Bộ nhớ</th>
+                            <th style="width: 140px;">Giá nhập</th>
+                            <th style="width: 140px;">Giá bán</th>
+                            <th style="width: 40px;">SL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#if listPro}}
+                        {{#each listPro}}
+                        <tr>
+                            <th scope="row">{{this.laptop_id}}</th>
+                            <td>{{this.manufacture_name}}</td>
+                            <td>{{this.model_name}}</td>
+                            <td>{{this.laptop_name}}</td>
+                            <td>{{this.laptop_cpu}}</td>
+                            <td>{{this.laptop_ram}}</td>
+                            <td>{{this.laptop_vga}}</td>
+                            <td>{{this.laptop_disk}}</td>
+                            <td>{{this.cost}} vnđ</td>
+                            <td>{{this.price}} vnđ</td>
+                            <td>{{this.inventory}}</td>
+                        </tr>
+                        {{/each}}
+                        {{/if}}
+                    </tbody>
+                </table>
+
+                <div class="pagination">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 pt-xs-15">
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <ul class="pagination-box pt-xs-20 pb-xs-15">
+                                {{#each listPage}}
+                                <li><a href="/shop?page={{this}}">{{this}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
