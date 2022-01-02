@@ -12,9 +12,9 @@ const executeQuery = (query) => {
 }
 
 const getList = async (page, laptop_id) => {
-    const offset = (page || 1 - 1) * ITEM_PER_PAGE;
+    const offset = (page - 1|| 1 - 1) * ITEM_PER_PAGE;
     if (!laptop_id) {
-        const sqlPaginate = `SELECT * FROM laptop LIMIT ${ITEM_PER_PAGE} OFFSET ${offset};`;
+        const sqlPaginate = `SELECT laptop.*, manufacture.manufacture_name as manu_name ,model.model_name as md_name FROM laptop JOIN manufacture ON laptop.manufacture = manufacture.manufacture_id JOIN model ON laptop.model = model.model_id LIMIT ${ITEM_PER_PAGE} OFFSET ${offset};`;
         const sqlTotalItem = `SELECT COUNT(*) AS totalItem FROM laptop`
         const [listItem, totalItem] = await Promise.all([executeQuery(sqlPaginate), executeQuery(sqlTotalItem)])
         const totalPage = Math.ceil((totalItem[0].totalItem || 0) / ITEM_PER_PAGE);
