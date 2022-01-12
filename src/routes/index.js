@@ -8,6 +8,7 @@ const signupRouter = require("./signup");
 const logoutRouter = require("./logout");
 const accountRouter = require("./account");
 const accoutListRouter = require("./accountlist");
+const userListRouter = require("./userlist");
 const editInfoRouter = require("./editinfo");
 
 function route(app) {
@@ -21,6 +22,7 @@ function route(app) {
   app.use("/account", accountRouter);
   app.use("/accountlist", accoutListRouter);
   app.use("/editinfo", editInfoRouter);
+  app.use("/userlist", userListRouter);
   app.use("/", homeRouter);
 }
 module.exports = route;
