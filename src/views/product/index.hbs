@@ -30,24 +30,40 @@
                 <th style="width: 40px;">SL</th>
               </tr>
             </thead>
-            {{#each listPro}}
             <tbody>
+              {{#if listPro}}
+              {{#each listPro}}
               <tr>
-                <th scope="row">{{laptop_id}}</th>
-                <td>{{manufacture_name}}</td>
-                <td>{{model_name}}</td>
-                <td>{{laptop_name}}</td>
-                <td>{{laptop_cpu}}</td>
-                <td>{{laptop_ram}}</td>
-                <td>{{laptop_vga}}</td>
-                <td>{{laptop_disk}}</td>
-                <td>{{cost}} VNĐ</td>
-                <td>{{price}} VNĐ</td>
-                <td>{{inventory}}</td>
+                <th scope="row">{{this.laptop_id}}</th>
+                <td>{{this.manu_name}}</td>
+                <td>{{this.md_name}}</td>
+                <td>{{this.laptop_name}}</td>
+                <td>{{this.laptop_cpu}}</td>
+                <td>{{this.laptop_ram}}</td>
+                <td>{{this.laptop_vga}}</td>
+                <td>{{this.laptop_disk}}</td>
+                <td>{{this.cost}} vnđ</td>
+                <td>{{this.price}} vnđ</td>
+                <td>{{this.inventory}}</td>
               </tr>
+              {{/each}}
+              {{/if}}
             </tbody>
-            {{/each}}
           </table>
+      
+          <div class="pagination">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 pt-xs-15">
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <ul class="pagination-box pt-xs-20 pb-xs-15">
+                  {{#each listPage}}
+                  <li><a href="/shop?page={{this}}">{{this}}</a></li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@ const findUserByUser = (username) => {
     return new Promise((resolve, reject) => {
         try {
             db.query(
-                ' SELECT * FROM `admins` WHERE `username` = ?  ', username,
+                `SELECT * FROM admins WHERE username = '${username}'`,
                 function(err, rows) {
                     if (err) {
                         reject(err)
@@ -44,7 +44,7 @@ const findUserById = (id) => {
     return new Promise((resolve, reject) => {
         try {
             db.query(
-                ' SELECT * FROM `admins` WHERE `id` = ?  ', id,
+                `SELECT * FROM admins WHERE admins.id = '${id}'`,
                 function(err, rows) {
                     if (err) {
                         reject(err)

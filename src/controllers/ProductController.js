@@ -2,8 +2,14 @@ const ProductModel = require('../models/product');
 
 class ProductController {
     index = async (req, res) => {
-        let {listPro,page,totalPage} = await ProductModel.getList(req.query.page || 0, req.query.name);
-        res.render('product/index',{listPro:listPro,page,totalPage});
+        const { listItem, page, totalPage } = await ProductModel.getList(
+            req.query.page || 1, 
+            req.query.name)
+        const listPage = [];
+        for (let i = 0; i < totalPage; i++) {
+            listPage.push(i + 1);
+        }
+        res.render('product', { listPro: listItem, listPage, page, user:req.user });
     }
 
     add_get = async (req, res) => {
