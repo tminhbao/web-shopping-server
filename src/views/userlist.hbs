@@ -16,6 +16,19 @@
     </tr>
   {{/each}}
 </table>
+<div class="pagination">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 pt-xs-15">
+    </div>
+    <div class="col-lg-6 col-md-6">
+      <ul class="pagination-box pt-xs-20 pb-xs-15">
+        {{#each listPage}}
+          <li><a href="/userlist?page={{this}}">{{this}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
 <div class="container mt-4">
   <a href="/account" class="btn btn-primary">Back</a>
   <a href="/" class="btn btn-primary">Home</a>
