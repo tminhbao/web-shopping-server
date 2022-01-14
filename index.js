@@ -14,7 +14,7 @@ app.set("views", path.join(__dirname, 'src/views'));
 // Set static 
 app.use(express.static('src/public'));
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
