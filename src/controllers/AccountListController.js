@@ -1,11 +1,20 @@
-const userModel = require('../models/user');
-const db = require('../database/connect');
+const userModel = require("../models/user");
+
 class AccountListController {
-    index(req,res) {
-        db.query('SELECT * FROM admins',(err,data) => {
-            if(err) throw err;
-            res.render('accountlist',{listUser:data});
-        })
+  async index(req, res) {
+    const { listItem, page, totalPage } = await userModel.getListAdmin(
+      req.query.page || 1
+    );
+    const listPage = [];
+    for (let i = 0; i < totalPage; i++) {
+      listPage.push(i + 1);
     }
+    res.render("accountlist", {
+      listUser: listItem,
+      listPage,
+      page,
+      user: req.user,
+    });
+  }
 }
-module.exports = new AccountListController;
+module.exports = new AccountListController();
