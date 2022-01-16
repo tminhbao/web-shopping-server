@@ -1,0 +1,189 @@
+<div class="container">
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Chỉnh sửa sản phẩm mới</div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <div class="form-label-group">
+                                <input type="text" name="laptop_id" id="laptop_id" class="form-control" placeholder="Mã sản phẩm" required="required" autofocus="autofocus">
+                                <label for="laptop_id">Mã sản phẩm</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <select name="manufacture" id="manufacture" class="form-control-lg form-control" style="font-size: 1rem; padding: 8px 12px;">
+                                <option value="0">Hãng</option>
+                                <option value="manufac001">Macbook</option>
+                                <option value="manufac002">Asus</option>
+                                <option value="manufac003">Dell</option>
+                                <option value="manufac004">Acer</option>
+                                <option value="manufac005">HP</option>
+                                <option value="manufac006">Lenovo</option>
+                                <option value="manufac007">Microsoft</option>
+                                <option value="manufac008">MSI</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <select name="model" id="model" class="form-control-lg form-control"
+                                style="font-size: 1rem; padding: 8px 12px;">
+                                <option value="0">Model</option>
+                                <option value="model001">Air 2020</option>
+                                <option value="model002">Pro 2020</option>
+                                <option value="model003">M1 2021</option>
+                                <option value="model004">ROG</option>
+                                <option value="model005">Zenbook</option>
+                                <option value="model006">TUF Gaming</option>
+                                <option value="model007">VivoBook</option>
+                                <option value="model008">G Gaming</option>
+                                <option value="model009">Vostro</option>
+                                <option value="model010">Inspiron</option>
+                                <option value="model011">Predator</option>
+                                <option value="model012">Nitro</option>
+                                <option value="model013">Swift</option>
+                                <option value="model014">Aspire</option>
+                                <option value="model015">Envy</option>
+                                <option value="model016">Pavilion</option>
+                                <option value="model017">ThinkPad</option>
+                                <option value="model018">Legion</option>
+                                <option value="model019">Yoga</option>
+                                <option value="model020">ThinkBook</option>
+                                <option value="model021">IdeaPad</option>
+                                <option value="model022">Surface</option>
+                                <option value="model023">GF Series</option>
+                                <option value="model024">Katana</option>
+                                <option value="model025">Stealth</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input value='{{this.laptop_name}}' type="text" name="laptop_name" id="laptop_name" class="form-control" placeholder="Tên sản phẩm" required="required">
+                                <label for="laptop_name">Tên sản phẩm</label>
+                            </div>
+                        </div>
+                        
+                    </div>               
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <div class="form-label-group">
+                                <input type="number" name="cost" id="cost" class="form-control" placeholder="VNĐ"
+                                    required="required">
+                                <label for="cost">Giá nhập sản phẩm</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-label-group">
+                                <input type="number" name="price" id="price" class="form-control" placeholder="VNĐ" required="required">
+                                <label for="price">Giá bán sản phẩm</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-label-group">
+                                <input type="number" name="inventory" id="inventory" class="form-control" placeholder="Số lượng"
+                                    required="required">
+                                <label for="inventory">Số lượng</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="text" name="cpu" id="cpu" class="form-control" placeholder="CPU" required="required">
+                                <label for="cpu">CPU</label>
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input type="text" name="vga" id="vga" class="form-control" placeholder="VGA" required="required">
+                                <label for="vga">VGA</label>
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <select name="disk_type" id="disk_type" class="form-control-lg form-control" style="font-size: 1rem; padding: 8px 12px;">
+                                <option value="0">Loại ổ cứng</option>
+                                <option value="SSD">SSD</option>
+                                <option value="HDD">HDD</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select name="disk_size" id="disk_size" class="form-control-lg form-control" style="font-size: 1rem; padding: 8px 12px;">
+                                <option value="0">Dung lượng ổ cứng</option>
+                                <option value="128GB">128GB</option>
+                                <option value="256GB">256GB</option>
+                                <option value="512GB">512GB</option>
+                                <option value="1TB">1TB</option>
+                            </select>
+                        </div>
+                    </div>               
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <select name="ram_size" id="ram_size" class="form-control-lg form-control" style="font-size: 1rem; padding: 8px 12px;">
+                                <option value="0">Dung lượng</option>
+                                <option value="4GB">4GB</option>
+                                <option value="8GB">8GB</option>
+                                <option value="16GB">16GB</option>
+                                <option value="32GB">32GB</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <select name="ram_type" id="ram_type" class="form-control-lg form-control" style="font-size: 1rem; padding: 8px 12px;">
+                                <option value="0">Loại</option>
+                                <option value="DDR4">DDR4</option>
+                                <option value="LPDDR4X">LPDDR4X</option>
+                                <option value="LPDDR4">LPDDR4</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <select name="ram_bus" id="ram_bus" class="form-control-lg form-control" style="font-size: 1rem; padding: 8px 12px;">
+                                <option value="0">Bus RAM</option>
+                                <option value="128GB">2400MHz</option>
+                                <option value="256GB">2666MHz</option>
+                                <option value="256GB">2933MHz</option>
+                                <option value="512GB">3200MHz</option>
+                                <option value="512GB">3733MHz</option>
+                                <option value="1TB">4266MHz</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                            <input type="text" name="laptop_img" id="laptop_img" class="form-control" placeholder="URL hình ảnh" required="required">
+                            <label for="laptop_img">URL hình ảnh</label>
+                            </div>
+                        </div>                   
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa fa-plus"></i> Thêm sản phẩm
+                </button>
+            </form>
+            
+        </div>
+    </div>
+</div>

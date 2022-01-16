@@ -38,15 +38,39 @@ class ProductController {
 
 
     delete = async (req,res) => {
-        let listPro = await ProductModel.getList();
-        res.render('product/delete',{listPro:listPro});
+        const { listItem, page, totalPage } = await ProductModel.getList(
+            req.query.page || 1, 
+            req.query.name)
+        const listPage = [];
+        for (let i = 0; i < totalPage; i++) {
+            listPage.push(i + 1);
+        }
+        res.render('product/delete', { listPro: listItem, listPage, page, user:req.user });
     }
 
     delete_get = async (req, res, next) => {
         const id = req.params['id'];
         console.log(id);
-        await ProductModel.delete(id);
+        await ProductModel.remove(id);
         res.redirect('../delete');
-};
+    }
+
+    edit = async (req, res) => {
+        const { listItem, page, totalPage } = await ProductModel.getList(
+            req.query.page || 1, 
+            req.query.name)
+        const listPage = [];
+        for (let i = 0; i < totalPage; i++) {
+            listPage.push(i + 1);
+        }
+        res.render('product/edit', { listPro: listItem, listPage, page, user:req.user });
+    }
+
+    edit_id = async (req, res) => {
+        const id = req.params['id'];
+        console.log(id);
+        const laptopById = await ProductModel.getLaptopById(id);
+        res.render('product/edit_id', { lap:laptopById});
+    }
 }
 module.exports = new ProductController;

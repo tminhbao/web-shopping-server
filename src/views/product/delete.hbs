@@ -37,8 +37,8 @@
                 {{#each listPro}}
                 <tr>
                     <th scope="row">{{this.laptop_id}}</th>
-                    <td>{{this.manufacture_name}}</td>
-                    <td>{{this.model_name}}</td>
+                    <td>{{this.manu_name}}</td>
+                    <td>{{this.md_name}}</td>
                     <td>{{this.laptop_name}}</td>
                     <td>{{this.laptop_cpu}}</td>
                     <td>{{this.laptop_ram}}</td>
@@ -53,6 +53,20 @@
                 {{/if}}
               </tbody>
             </table>
+
+            <div class="pagination">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 pt-xs-15">
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <ul class="pagination-box pt-xs-20 pb-xs-15">
+                  {{#each listPage}}
+                  <li><a href="/product/delete?page={{this}}">{{this}}</a></li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
