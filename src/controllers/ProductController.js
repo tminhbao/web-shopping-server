@@ -70,7 +70,7 @@ class ProductController {
         const id = req.params['id'];
         console.log(id);
         const laptopById = await ProductModel.getLaptopById(id);
-        res.render('product/edit_id', { listPro:laptopById});
+        res.render('product/edit_id', { listPro: laptopById });
     }
 }
 module.exports = new ProductController;
