@@ -1,4 +1,4 @@
-const user = require('../models/users');
+const user = require('../models/user');
 
 exports.list = async (req, res, next) => {
     const data = await user.list();
@@ -15,7 +15,7 @@ exports.lock = async (req, res, next) => {
     const detail = await user.detail(id);
     await user.addLock(detail);
     await user.delete(id);
-    res.redirect('/users/lock_list');
+    res.redirect('users/lock_list');
 };
 
 exports.unlock_list = async (req, res, next) => {
