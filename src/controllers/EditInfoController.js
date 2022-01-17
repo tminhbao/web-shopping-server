@@ -13,7 +13,7 @@ class EditInfoController {
       updateData,
       function (err, data) {
         if (err) throw err;
-        console.log(data.affectedRows + " record(s) updated");
+        console.log("Number of records updated: " + result.affectedRows);
       }
     );
     res.redirect("/account");

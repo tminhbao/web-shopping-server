@@ -9,7 +9,7 @@ class UserListController {
     for (let i = 0; i < totalPage; i++) {
       listPage.push(i + 1);
     }
-    res.render("userlist", {
+    res.render('users/list', {
       listUser: listItem,
       listPage,
       page,

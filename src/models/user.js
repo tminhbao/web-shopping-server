@@ -34,4 +34,10 @@ const getListUser = async (page) => {
   return { listItem, totalPage, page };
 };
 
-module.exports = { getListAdmin, getListUser };
+const getUserByID = async (id) => {
+  const sqlUserInfo = `SELECT * FROM users WHERE id = '${id}'`;
+  const userInfo = await executeQuery(sqlUserInfo);
+  return userInfo;
+};
+
+module.exports = { getListAdmin, getListUser, getUserByID };
