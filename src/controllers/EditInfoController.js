@@ -11,7 +11,7 @@ class EditInfoController {
     db.query(
       `UPDATE admins SET ? WHERE username = '${username}'`,
       updateData,
-      function (err, data) {
+      function (err, result) {
         if (err) throw err;
         console.log("Number of records updated: " + result.affectedRows);
       }
