@@ -10,7 +10,6 @@ app.set("view engine", "hbs");
 // Path
 const path = require("path");
 app.set("views", path.join(__dirname, "src/views"));
-console.log(__dirname);
 
 // Set static
 app.use(express.static("src/public"));
