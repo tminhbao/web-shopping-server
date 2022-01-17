@@ -50,10 +50,11 @@ const remove = async (id) =>{
 }
 
 const getLaptopById = async (id) => {
-    let select_by_id = 'SELECT * FROM laptop WHERE laptop_id = ?';
-    let query = db.query(select_by_id, id, (err, result) => {
-        if (err) throw err;
-    })
+    let select_by_id = `SELECT * FROM laptop WHERE laptop_id = '${id}'`;
+    
+    const laptop = await executeQuery(select_by_id);
+    console.log(laptop[0].laptop_id);
+    return laptop;
 }
 
 module.exports = { getList, add, remove, getLaptopById }

@@ -1,5 +1,7 @@
 const ProductModel = require('../models/product');
 
+
+
 class ProductController {
     index = async (req, res) => {
         const { listItem, page, totalPage } = await ProductModel.getList(
@@ -68,9 +70,8 @@ class ProductController {
 
     edit_id = async (req, res) => {
         const id = req.params['id'];
-        console.log(id);
         const laptopById = await ProductModel.getLaptopById(id);
-        res.render('product/edit_id', { listPro: laptopById });
+        res.render('product/edit_id', { listPro: laptopById[0] });
     }
 }
 module.exports = new ProductController;
