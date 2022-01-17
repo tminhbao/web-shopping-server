@@ -1,8 +1,8 @@
 // const route = require('color-convert/route');
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const orderController = require('../controllers/OrderController');
-
+const orderController = require("../controllers/OrderController");
+const signInController = require("../controllers/SignInController");
 // router.get('/delivery', order.delivery);//Chưa giao hàng
 // router.get('/delivery/:id', order.delivery_detail);
 
@@ -11,6 +11,6 @@ const orderController = require('../controllers/OrderController');
 
 // router.get('/deliver/:id', order.deliver);//Giao hàng
 
-router.use('/',orderController.index);
+router.use("/", signInController.checkLoggedIn, orderController.index);
 
 module.exports = router;
