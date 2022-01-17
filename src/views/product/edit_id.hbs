@@ -2,13 +2,13 @@
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">Chỉnh sửa sản phẩm mới</div>
         <div class="card-body">
-            
+            {{#if listPro}}
             <form method="POST">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-4">
                             <div class="form-label-group">
-                                <input type="text" name="laptop_id" id="laptop_id" class="form-control" placeholder="Mã sản phẩm" required="required" autofocus="autofocus">
+                                <input value={{listPro.laptop_id}} type="text" name="laptop_id" id="laptop_id" class="form-control" placeholder="Mã sản phẩm" required="required" autofocus="autofocus">
                                 <label for="laptop_id">Mã sản phẩm</label>
                             </div>
                         </div>
@@ -64,9 +64,10 @@
                         <div class="col-md-12">
                             
                             <div class="form-label-group">
-                                <input value='{{this.laptop_name}}' type="text" name="laptop_name" id="laptop_name" class="form-control" placeholder="Tên sản phẩm" required="required">
+                                <input type="text" name="laptop_name" id="laptop_name" class="form-control" placeholder="Tên sản phẩm" required="required" value={{listPro.laptop_name}}>
                                 <label for="laptop_name">Tên sản phẩm</label>
                             </div>
+                             
                         </div>
                         
                     </div>               
@@ -75,20 +76,20 @@
                     <div class="form-row">
                         <div class="col-md-4">
                             <div class="form-label-group">
-                                <input type="number" name="cost" id="cost" class="form-control" placeholder="VNĐ"
+                                <input value={{listPro.cost}} type="number" name="cost" id="cost" class="form-control" placeholder="VNĐ"
                                     required="required">
                                 <label for="cost">Giá nhập sản phẩm</label>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-label-group">
-                                <input type="number" name="price" id="price" class="form-control" placeholder="VNĐ" required="required">
+                                <input value={{listPro.price}} type="number" name="price" id="price" class="form-control" placeholder="VNĐ" required="required">
                                 <label for="price">Giá bán sản phẩm</label>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-label-group">
-                                <input type="number" name="inventory" id="inventory" class="form-control" placeholder="Số lượng"
+                                <input value={{listPro.inventory}} type="number" name="inventory" id="inventory" class="form-control" placeholder="Số lượng"
                                     required="required">
                                 <label for="inventory">Số lượng</label>
                             </div>
@@ -99,7 +100,7 @@
                     <div class="form-row">
                         <div class="col-md-12">
                             <div class="form-label-group">
-                                <input type="text" name="cpu" id="cpu" class="form-control" placeholder="CPU" required="required">
+                                <input value={{listPro.laptop_cpu}} type="text" name="cpu" id="cpu" class="form-control" placeholder="CPU" required="required">
                                 <label for="cpu">CPU</label>
                             </div>
                         </div>
@@ -109,7 +110,7 @@
                     <div class="form-row">
                         <div class="col-md-12">
                             <div class="form-label-group">
-                                <input type="text" name="vga" id="vga" class="form-control" placeholder="VGA" required="required">
+                                <input value={{listPro.laptop_vga}} type="text" name="vga" id="vga" class="form-control" placeholder="VGA" required="required">
                                 <label for="vga">VGA</label>
                             </div>
                         </div>
@@ -182,10 +183,10 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
-                    <i class="fa fa-plus"></i> Thêm sản phẩm
+                    <i class="fa fa-plus">Chỉnh sửa sản phẩm</i> 
                 </button>
             </form>
-            
+            {{/if}}
         </div>
     </div>
 </div>
