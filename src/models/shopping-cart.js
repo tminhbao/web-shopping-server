@@ -8,6 +8,13 @@ const executeQuery = (query) => {
   });
 };
 
+const updateCheckout = async (user_id) => {
+  const sql = `UPDATE checkout SET state = 'delivered' WHERE user_id = ${user_id}`;
+  const listUpdate = await executeQuery(sql);
+  console.log(listUpdate);
+  return listUpdate;
+};
+
 const getCheckoutDelivered = async () => {
   const sql = `SELECT * FROM checkout WHERE state = 'delivered'`;
   const listCheckout = await executeQuery(sql);
@@ -20,4 +27,8 @@ const getCheckoutDelivering = async () => {
   return listCheckout;
 };
 
-module.exports = { getCheckoutDelivered, getCheckoutDelivering };
+module.exports = {
+  getCheckoutDelivered,
+  getCheckoutDelivering,
+  updateCheckout,
+};

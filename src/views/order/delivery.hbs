@@ -23,8 +23,8 @@
                     <th>Số điện thoại người nhận hàng</th>
                     <th>Địa chỉ giao hàng</th>
                     <th>Ngày đặt hàng</th>
-                    {{!-- <th>Danh sách hàng hóa khách hàng đặt</th>
-                    <th>Xác nhận đã giao</th> --}}
+                    {{!-- <th>Danh sách hàng hóa khách hàng đặt</th> --}}
+                    <th>Xác nhận đã giao</th>
                 </tr>
               </thead>
               <tbody>
@@ -38,6 +38,11 @@
                     <td>{{created}}</td>
                     {{!-- <td><a href="/order/delivery/{{this._id}}">Danh sách mặt hàng</a></td>
                     <td><a href="/order/deliver/{{this._id}}">Xác nhận đã giao hàng</a></td> --}}
+                    <td><form action="/order/delivery">
+                      <input type="hidden" value="delivered" name="delivered"> 
+                      <input type="hidden" value={{user_id}} name="user_id"> 
+                      <button class="btn btn-primary">OK</button>
+                    </form></td>
                 </tr>
                 {{/each}}
                 {{/if}}
