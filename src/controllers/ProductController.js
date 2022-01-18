@@ -86,7 +86,6 @@ class ProductController {
 
   edit_id = async (req, res) => {
     const id = req.params["id"];
-    console.log(id);
     const laptopById = await ProductModel.getLaptopById(id);
     res.render("product/edit_id", { listPro: laptopById });
   };
