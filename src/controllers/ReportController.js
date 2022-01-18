@@ -1,6 +1,8 @@
+const ShoppingCartModel = require("../models/shopping-cart");
 class ReportController {
-    index(req,res) {
-        res.render('report/top')
-    }
+  async index(req, res) {
+    const listProduct = await ShoppingCartModel.getTop10Product();
+    res.render("report/top", { listProduct: listProduct });
+  }
 }
-module.exports = new ReportController;
+module.exports = new ReportController();

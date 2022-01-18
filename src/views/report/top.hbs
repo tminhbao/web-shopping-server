@@ -24,32 +24,22 @@
                     <th>Tên sản phẩm</th>
                     <th>Số lượng</th>
                     <th>Giá (VNĐ)</th>
-                    <th>Màn hình</th>
-                    <th>Camera trước</th>
-                    <th>Camera sau</th>
                     <th>CPU</th>
                     <th>Ram</th>
-                    <th>Bộ nhớ</th>
-                    <th>Hình ảnh</th>
                 </tr>
               </thead>
               <tbody>
-                {{#if list}}
-                {{#each list}}
+                {{#if listProduct}}
+                {{#each listProduct}}
                 <tr>
-                    <th scope="row">{{this.soLuongBan}}</th>
-                    <th>{{this.ma}}</th>
-                    <td>{{this.loai}}</td>
-                    <td>{{this.ten}}</td>
-                    <td>{{this.soLuong}}</td>
-                    <td>{{this.gia}}</td>
-                    <td>{{this.manHinh}}</td>
-                    <td>{{this.cameraTruoc}}</td>
-                    <td>{{this.cameraSau}}</td>
-                    <td>{{this.cpu}}</td>
-                    <td>{{this.ram}}</td>
-                    <td>{{this.rom}}</td>
-                    <td><a href="{{this.hinhAnh}}">{{this.hinhAnh}}</a></td>
+                    <th scope="row">{{quantityProduct}}</th>
+                    <th>{{laptop_id}}</th>
+                    <td>{{model_name}}</td>
+                    <td>{{name}}</td>
+                    <td>{{quantity}}</td>
+                    <td>{{price}}</td>
+                    <td>{{laptop_cpu}}</td>
+                    <td>{{lapto_ram}}</td>
                 </tr>
                 {{/each}}
                 {{/if}}

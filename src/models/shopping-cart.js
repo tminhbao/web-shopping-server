@@ -27,8 +27,15 @@ const getCheckoutDelivering = async () => {
   return listCheckout;
 };
 
+const getTop10Product = async () => {
+  const sql = `SELECT laptop.*,model.model_name,SUM(quantity) as quantityProduct, CONCAT_WS(" ", manufacture.manufacture_name, model.model_name, laptop.laptop_name) as name FROM shoppingcartdb,laptop,manufacture,model WHERE shoppingcartdb.laptop_id = laptop.laptop_id AND laptop.manufacture = manufacture.manufacture_id AND laptop.model = model.model_id GROUP BY laptop_id ORDER BY quantityProduct DESC LIMIT 10 `;
+  const list = await executeQuery(sql);
+  return list;
+};
+
 module.exports = {
   getCheckoutDelivered,
   getCheckoutDelivering,
   updateCheckout,
+  getTop10Product,
 };
