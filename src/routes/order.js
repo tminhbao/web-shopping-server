@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const orderController = require("../controllers/OrderController");
+const orderDeliveryController = require("../controllers/OrderDeliveringController");
 const signInController = require("../controllers/SignInController");
 // router.get('/delivery', order.delivery);//Chưa giao hàng
 // router.get('/delivery/:id', order.delivery_detail);
@@ -11,6 +12,12 @@ const signInController = require("../controllers/SignInController");
 
 // router.get('/deliver/:id', order.deliver);//Giao hàng
 
-router.use("/", signInController.checkLoggedIn, orderController.index);
+router.get("/", signInController.checkLoggedIn, orderController.index);
+router.get(
+  "/delivery",
+  signInController.checkLoggedIn,
+  orderDeliveryController.index
+);
+router.get("/delivered", signInController.checkLoggedIn, orderController.index);
 
 module.exports = router;

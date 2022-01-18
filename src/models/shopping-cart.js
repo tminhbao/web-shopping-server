@@ -8,10 +8,16 @@ const executeQuery = (query) => {
   });
 };
 
-const getCheckout = async () => {
-  const sql = `SELECT * FROM checkout`;
+const getCheckoutDelivered = async () => {
+  const sql = `SELECT * FROM checkout WHERE state = 'delivered'`;
   const listCheckout = await executeQuery(sql);
   return listCheckout;
 };
 
-module.exports = { getCheckout };
+const getCheckoutDelivering = async () => {
+  const sql = `SELECT * FROM checkout WHERE state = 'delivering'`;
+  const listCheckout = await executeQuery(sql);
+  return listCheckout;
+};
+
+module.exports = { getCheckoutDelivered, getCheckoutDelivering };

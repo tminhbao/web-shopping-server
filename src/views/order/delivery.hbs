@@ -23,21 +23,21 @@
                     <th>Số điện thoại người nhận hàng</th>
                     <th>Địa chỉ giao hàng</th>
                     <th>Ngày đặt hàng</th>
-                    <th>Danh sách hàng hóa khách hàng đặt</th>
-                    <th>Xác nhận đã giao</th>
+                    {{!-- <th>Danh sách hàng hóa khách hàng đặt</th>
+                    <th>Xác nhận đã giao</th> --}}
                 </tr>
               </thead>
               <tbody>
-                {{#if data}}
-                {{#each data}}
+                {{#if listCheckout}}
+                {{#each listCheckout}}
                 <tr>
-                    <th scope="row">{{this.email}}</th>
-                    <td>{{this.nguoiNhan}}</td>
-                    <td>{{this.sdtNguoiNhan}}</td>
-                    <td>{{this.diaChiNhan}}</td>
-                    <td>{{this.time}}</td>
-                    <td><a href="/order/delivery/{{this._id}}">Danh sách mặt hàng</a></td>
-                    <td><a href="/order/deliver/{{this._id}}">Xác nhận đã giao hàng</a></td>
+                    <th scope="row">{{email}}</th>
+                    <td>{{firstname}}</td>
+                    <td>{{phone}}</td>
+                    <td>{{address}}</td>
+                    <td>{{created}}</td>
+                    {{!-- <td><a href="/order/delivery/{{this._id}}">Danh sách mặt hàng</a></td>
+                    <td><a href="/order/deliver/{{this._id}}">Xác nhận đã giao hàng</a></td> --}}
                 </tr>
                 {{/each}}
                 {{/if}}
