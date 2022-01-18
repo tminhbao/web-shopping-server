@@ -1,6 +1,8 @@
+const ShoppingCartModel = require("../models/shopping-cart");
 class UserController {
-    index(req,res) {
-        res.render('users/list')
-    }
+  index(req, res) {
+    res.render("userlist");
+  }
 }
-module.exports = new UserController;
+
+module.exports = new UserController();

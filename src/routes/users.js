@@ -1,6 +1,6 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-const userController = require('../controllers/UserController');
+const userController = require("../controllers/UserController");
 
 // router.get('/', user.list );
 
@@ -10,5 +10,5 @@ const userController = require('../controllers/UserController');
 // router.get('/unlock_list', user.unlock_list );
 // router.get('/unlock/:id', user.unlock );
 
-router.use('/',userController.index)
+router.get("/", userController.index);
 module.exports = router;

@@ -6,10 +6,10 @@
     <th>Last Name</th>
     <th>Address</th>
     <th>Telephone</th>
+    <th>Lock</th>
   </tr>
   {{#each listUser}}
     <tr>
-
       <td><a
           href="userinfo?id={{id}}"
           style="text-decoration:none"
@@ -17,7 +17,12 @@
       <td>{{lastname}}</td>
       <td>{{address}}</td>
       <td>{{mob_no}}</td>
-
+      <td>
+        <form>
+          <input type="hidden" name="user_id" value={{id}} />
+          <button type="submit" class="btn btn-danger">Lock</button>
+        </form>
+      </td>
     </tr>
   {{/each}}
 

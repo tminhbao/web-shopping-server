@@ -40,4 +40,9 @@ const getUserByID = async (id) => {
   return userInfo;
 };
 
-module.exports = { getListAdmin, getListUser, getUserByID };
+const lockUser = async (id) => {
+  const sqlLock = `ALTER users 'admin1@gmail.com'@'sql6.freemysqlhosting.net' ACCOUNT LOCK;`;
+  await executeQuery(sqlLock);
+};
+
+module.exports = { getListAdmin, getListUser, getUserByID, lockUser };
