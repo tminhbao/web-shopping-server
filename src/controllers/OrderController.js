@@ -1,6 +1,8 @@
+const ShoppingCartModel = require("../models/shopping-cart");
 class OrderController {
-    index(req,res) {
-        res.render('order/delivered')
-    }
+  async index(req, res) {
+    const listCheckout = await ShoppingCartModel.getCheckout();
+    res.render("order/delivered", { listCheckout: listCheckout });
+  }
 }
-module.exports = new OrderController;
+module.exports = new OrderController();
